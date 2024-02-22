@@ -53,7 +53,6 @@
   }
 
   &__heading {
-    width: 182px;
     font-family: "Segoe UI";
     font-size: 22px;
     font-weight: 600;
@@ -65,6 +64,9 @@
     margin-bottom: 51px;
     border: none;
     width: 200px;
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 30px;
   }
 
   &__img {
@@ -163,5 +165,50 @@
 
   &--img {
     margin-bottom: 22px;
+  }
+}
+
+
+.main {
+  &--light {
+    background-color: white;
+    color: #000;
+  }
+
+  &--dark {
+    background-color: black;
+    color: #fff;
+
+    .hero__home {
+      color: #fff;
+    }
+    .about__heading {
+      color: #fff;
+    }
+    .about__button {
+      color: #fff;
+    }
+    .zoro__link {
+      color: #fff;
+    }
+    .zoro__text {
+      color: #fff;
+    }
+
+    .zoro__heading {
+      color: #fff;
+    }
+
+    .about__heading {
+      color: #fff;
+      background-color: #000;
+    }
+
+    .select {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
   }
 }

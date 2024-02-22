@@ -63,3 +63,32 @@
 }
 
 /////////////////////////////////////////////////////////////////////////
+
+.header {
+  &--light {
+    background-color: white;
+    color: #000;
+  }
+
+  &--dark {
+    background-color: black;
+    color: #fff;
+
+    .header__nlink {
+      color: #fff;
+    }
+
+    .header__info {
+      background-color: #000;
+      border: 1px solid #fff;
+      border-radius: 6px;
+      padding: 10px 20px;
+    }
+
+    .header__prof {
+      border: 1px solid #fff;
+      border-radius: 40px;
+      padding: 5px 10px;
+    }
+  }
+}

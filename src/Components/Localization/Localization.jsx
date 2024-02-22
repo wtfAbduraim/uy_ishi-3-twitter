@@ -23,6 +23,7 @@ const Languages = {
     },
 
     footer: {
+      inputf: "Search Twitter",
       head: "Trends for you",
       head_1: "Trending in Germany",
       head_2: "Revolution",
@@ -57,10 +58,11 @@ const Languages = {
         "Вы не устали от конфронтации между женщинами и мужчинами в Твиттере?",
       text_3:
         "В этом году сезон программы YPIP подходит к концу. Приятно видеть, как во время наставничества растут студенты и новые выпускники.",
-      text4: "Я на обеде... Извините.",
+      text_4: "Я на обеде... Извините.",
     },
 
     footer: {
+      inputf: "Поиск в Твиттере",
       head: "Тенденции для вас",
       head_1: "Тренды в Германии",
       head_2: "Революция",
@@ -95,10 +97,11 @@ const Languages = {
         "Twitterdagi ayol-erkak qarama-qarshiligingizdan charchamadingizmi?",
       text_3:
         " YPIP dasturining bu yilgi mavsumi yakunlanmoqda. Talabalar va yangi bitiruvchilar murabbiylik davrida o'sib borayotganini ko'rish juda yoqimli.",
-      text4: "Men tushlikdaman... Kechirasiz",
+      text_4: "Men tushlikdaman... Kechirasiz",
     },
 
     footer: {
+      inputf: "Twitter-ni qidiring",
       head: "Siz uchun trendlar",
       head_1: "Germaniyada trend",
       head_2: "Inqilob",
@@ -113,3 +116,5 @@ const Languages = {
     },
   },
 };
+
+export default Languages

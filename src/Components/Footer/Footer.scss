@@ -1,6 +1,6 @@
 .footer {
-    width: 400px;
-    margin: 0 auto;
+  width: 400px;
+  margin: 0 auto;
   margin-top: 20px;
   margin-left: 10px;
 
@@ -31,12 +31,16 @@
     border: none;
   }
 
+  &__search {
+    cursor: pointer;
+  }
+
   &__list {
     padding: 0 40px;
     width: 260px;
     border-radius: 6px;
     background-color: #f7f9f9;
-    height: 402px;
+    height: 452px;
   }
 
   &__item {
@@ -111,7 +115,7 @@
   }
 
   &__may {
-    width: 300px;
+    width: 320px;
     height: 295px;
     background-color: #f7f9f9;
     padding: 1px 50px;
@@ -128,7 +132,7 @@
   }
 
   &__btn {
-    width: 92px;
+    width: 100px;
     height: 38px;
     background-color: #000;
     font-family: "Segoe UI";
@@ -139,12 +143,13 @@
     text-align: left;
     color: #fff;
     border-radius: 30px;
-    padding: 5px 10px;
+    padding: 5px 3px;
     cursor: pointer;
+    border: none;
   }
 
   &__link-1 {
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
@@ -156,4 +161,61 @@
 
 .rr {
   margin-top: -30px;
+}
+
+.footer {
+  &--light {
+    background-color: white;
+    color: #000;
+  }
+
+  &--dark {
+    background-color: black;
+    color: #fff;
+
+    .footer__div {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+    .footer__input::placeholder {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 10px;
+    }
+
+    .footer__list {
+      background-color: black;
+      border: 1px solid #fff;
+    }
+
+    .footer__list {
+      color: #fff;
+    }
+
+    .footer__heading {
+      color: #fff;
+    }
+
+    .footer__map {
+      color: #fff;
+    }
+
+    .footer__title {
+      color: #fff;
+    }
+
+    .footer__post {
+      color: #fff;
+    }
+
+    .footer__may {
+      background-color: #000;
+      border: 1px solid #fff;
+    }
+
+    .footer__btn {
+      border: 2px solid #fff;
+    }
+  }
 }

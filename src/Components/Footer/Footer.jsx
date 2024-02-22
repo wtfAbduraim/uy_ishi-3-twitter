@@ -1,13 +1,20 @@
+import React from "react";
 import "./Footer.scss";
+import Languages from "../Localization/Localization";
+import { Context as LocalizationContext } from "../Context/Localization";
+import { Context as ThemeContext} from "../Context/Theme";
 import Search from "../Lib/Img/search.svg";
 import Setting from "../Lib/Img/setting.svg";
 import menu from "../Lib/Img/Menu.svg";
 import profil from "../Lib/Img/person_hdr.jpg";
 
 function Footer() {
+  const { lang } = React.useContext(LocalizationContext);
+  const {theme} = React.useContext(ThemeContext)
+
   return (
     <>
-      <footer className="footer">
+      <footer className={`footer footer--${theme}`}>
         <div className="footer-container">
           <div className="footer__div">
             <img
@@ -20,49 +27,55 @@ function Footer() {
             <input
               className="footer__input"
               type="text"
-              placeholder="Search Twitter"
+              placeholder={Languages[lang].footer.inputf}
             />
           </div>
 
           <ul className="footer__list">
             <li className="footer__item">
-              <h4 className="footer__heading">Trends for you</h4>
+              <h4 className="footer__heading">{Languages[lang].footer.head}</h4>
               <img src={Setting} alt="set" width={20} height={20} />
             </li>
 
             <li className="footer__info">
               <div className="footer__flex">
-                <p className="footer__map">Trending in Germany</p>
-                <h5 className="footer__title">Revolution</h5>
-                <p className="footer__post">50.4K Tweets</p>
+                <p className="footer__map">{Languages[lang].footer.head_1}</p>
+                <h5 className="footer__title">
+                  {Languages[lang].footer.head_2}
+                </h5>
+                <p className="footer__post">{Languages[lang].footer.head_3}</p>
               </div>
               <img src={menu} alt="menu" width={17} height={4} />
             </li>
 
             <li className="footer__info">
               <div className="footer__flex">
-                <p className="footer__map">Trending in Germany</p>
-                <h5 className="footer__title">Revolution</h5>
-                <p className="footer__post">50.4K Tweets</p>
+                <p className="footer__map">{Languages[lang].footer.head_1}</p>
+                <h5 className="footer__title">
+                  {Languages[lang].footer.head_2}
+                </h5>
+                <p className="footer__post">{Languages[lang].footer.head_3}</p>
               </div>
               <img src={menu} alt="menu" width={17} height={4} />
             </li>
 
             <li className="footer__info">
               <div className="footer__flex">
-                <p className="footer__map">Trending in Germany</p>
-                <h5 className="footer__title">Revolution</h5>
-                <p className="footer__post">50.4K Tweets</p>
+                <p className="footer__map">{Languages[lang].footer.head_1}</p>
+                <h5 className="footer__title">
+                  {Languages[lang].footer.head_2}
+                </h5>
+                <p className="footer__post">{Languages[lang].footer.head_3}</p>
               </div>
               <img src={menu} alt="menu" width={17} height={4} />
             </li>
             <a className="footer__show" href="#">
-              Show more
+              {Languages[lang].footer.head_4}
             </a>
           </ul>
 
           <ul className="footer__may">
-            <h5 className="footer__heading">You might like</h5>
+            <h5 className="footer__heading">{Languages[lang].footer.head_5}</h5>
             <li className="footer__lay">
               <img
                 className="hdr__human rr"
@@ -75,7 +88,9 @@ function Footer() {
                 <h5 className="footer__title">Mushtariy</h5>
                 <p className="footer__post">@Mushtar565266</p>
               </div>
-              <button className="footer__btn">Follow</button>
+              <button className="footer__btn">
+                {Languages[lang].footer.head_6}
+              </button>
             </li>
 
             <li className="footer__lay">
@@ -90,16 +105,21 @@ function Footer() {
                 <h5 className="footer__title">Mushtariy</h5>
                 <p className="footer__post">@Mushtar565266</p>
               </div>
-              <button className="footer__btn">Follow</button>
+              <button className="footer__btn">
+                {Languages[lang].footer.head_6}
+              </button>
             </li>
             <a className="footer__show" href="#">
-              Show more
+              {Languages[lang].footer.head_4}
             </a>
           </ul>
 
           <a className="footer__link-1" href="#">
-            Terms of Service <span className="footer__span">Privacy Policy</span> Cookie Policy Imprint 
-            Ads Info More ··· © 2021 Twitter, Inc.
+            {Languages[lang].footer.head_7}{" "}
+            <span className="footer__span">
+              {Languages[lang].footer.head_8}
+            </span>{" "}
+            {Languages[lang].footer.head_9}
           </a>
         </div>
       </footer>

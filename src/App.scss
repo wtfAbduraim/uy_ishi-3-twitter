@@ -69,3 +69,32 @@ li {
     margin-top: -1px;
   }
 }
+
+.body {
+  &--light {
+    background-color: white;
+    color: #000;
+  }
+
+  &--dark {
+    background-color: black;
+    color: #fff;
+
+    .hero__home {
+      color: #fff;
+    }
+    .about__heading {
+      color: #fff;
+    }
+    .about__button {
+      color: #fff;
+    }
+    .zoro__link {
+      color: #fff;
+    }
+    .zoro__text {
+      color: #fff;
+    }
+
+  }
+}

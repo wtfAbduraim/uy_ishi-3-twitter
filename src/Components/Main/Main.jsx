@@ -1,8 +1,8 @@
 import React from "react";
 import "./Main.scss";
 import Languages from "../Localization/Localization";
-import { Context as setContext } from "../Context/Localization";
-import Customize from "../Lib/Img/Customize.svg";
+import { Context as LocalizationContext } from "../Context/Localization";
+import useTheme from "../Hooks/usehooks";
 import human from "../Lib/Img/person_hdr.jpg";
 import AboutLogo from "../Lib/Img/about-logo.svg";
 import FameLogo from "../Lib/Img/Frame.png";
@@ -10,17 +10,19 @@ import Menu from "../Lib/Img/Menu.svg";
 import ZoroImg from "../Lib/Img/zoro-img.png";
 
 function Main() {
-  const { lang, setLang } = React.useContext(setContext);
+  const { lang, setLang } = React.useContext(LocalizationContext);
+  const [theme, setTheme] = useTheme();
 
   return (
     <>
-      <main className="main">
+      <main className={`main main--${theme}`}>
         <section className="hero">
           <div className="hero__container">
             <div className="hero__div1">
-              <p className="hero__home">{Languages[lang].main.mainTo.text_1}</p>
+              <p className="hero__home">{Languages[lang].main.text_1}</p>
               <div className="menu__hero">
                 <select
+                  className="select"
                   value={lang}
                   onChange={(evt) => setLang(evt.target.value)}
                 >
@@ -28,7 +30,14 @@ function Main() {
                   <option value="ru">RU</option>
                   <option value="uz">UZ</option>
                 </select>
-                <img className="hero__menu" src={Customize} alt="Icon" />
+                <select
+                  className="select"
+                  value={theme}
+                  onChange={(evt) => setTheme(evt.target.value)}
+                >
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
               </div>
             </div>
             <span className="hero__line1"></span>
@@ -49,7 +58,7 @@ function Main() {
                 <input
                   className="about__heading"
                   type="text"
-                  placeholder="What’s happening"
+                  placeholder={Languages[lang].main.input}
                 />
                 <div className="about__img">
                   <a href="#">
@@ -74,7 +83,9 @@ function Main() {
                 </div>
               </div>
             </div>
-            <button className="about__button">Tweet</button>
+            <button className="about__button">
+              {Languages[lang].main.textbtn}
+            </button>
           </div>
           <span className="about__line2"></span>
         </section>
@@ -95,9 +106,7 @@ function Main() {
                   @inner · 25m
                 </a>
               </div>
-              <p className="zoro__text">
-                Aren't you tired of your female-male confrontations on Twitter?
-              </p>
+              <p className="zoro__text">{Languages[lang].main.text_2}</p>
               <img
                 className="zoro__fame"
                 src={FameLogo}
@@ -127,11 +136,7 @@ function Main() {
                   @RajLahoti · 22m
                 </a>
               </div>
-              <p className="zoro__text">
-                This year's season of the YPIP program is coming to an end. It
-                is a pleasure to see students and new graduates grow during
-                mentorship.
-              </p>
+              <p className="zoro__text">{Languages[lang].main.text_3}</p>
               <img
                 className="zoro__fame"
                 src={FameLogo}
@@ -161,7 +166,7 @@ function Main() {
                   @cloutexhibition · 1h
                 </a>
               </div>
-              <p className="zoro__text">I'm at lunch... Excuse me</p>
+              <p className="zoro__text">{Languages[lang].main.text_4}</p>
               <img
                 className="zoro--img"
                 src={ZoroImg}

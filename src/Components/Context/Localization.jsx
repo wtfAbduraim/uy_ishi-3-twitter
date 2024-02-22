@@ -1,12 +1,21 @@
 import React from "react";
 
-const Context = React.createContext(null);
+const Context = React.createContext();
 
 function Provider({ children }) {
+  const [lang, setLang] = React.useState(window.localStorage.getItem("lang") || "en");
 
-  const [lang, setLang] = React.useState('en')
+  React.useEffect(() => {
+    if (lang) {
+      window.localStorage.setItem("lang", lang);
+    } else {
+      window.localStorage.removeItem("lang");
+    }
+  }, [lang]);
 
-  return <Context.Provider value={{lang, setLang}}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ lang, setLang }}>{children}</Context.Provider>
+  );
 }
 
 export { Context, Provider };
